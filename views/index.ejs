@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ejs</title>
-</head>
-<body>
-    <h1>index ejs hola <%= usuario.nombreCliente%></h1>
+<%- include('./layout/cabecera.ejs') %> 
 
-</body>
-</html>
+<br>
+    <div class="text-center">
+        <a href="/clientes" class="btn btn-primary" type="button">Clientes</a>
+        <a href="/municipios" class="btn btn-primary" type="button">Municipios</a>
+    </div>
+
+
+    <%- include('./layout/pie.ejs') %> 

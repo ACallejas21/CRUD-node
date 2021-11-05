@@ -1,5 +1,5 @@
 import express from 'express'
-import { consultaUsuario  } from '../controllers/prueba.js'
+import { consultaUsuario, guardarCliente, eliminarCliente , consultaCliente, actualizarCliente , consultaMunicipio} from '../controllers/clientesController.js'
 
 const router = express.Router()
 
@@ -8,10 +8,22 @@ const router = express.Router()
 //     res.render('hola', {user: req.user})
 // })
 
-router.get('/' , consultaUsuario)
+router.get('/' ,(req, res) => { 
+    res.render('index')
+})
 
-// router.get('/' ,(req, res) => { 
-//     res.render('index')
-// })
+
+
+
+router.get('/clientes' , consultaUsuario)
+
+router.get('/agregarCliente', consultaMunicipio)
+
+router.get('/editarCliente/:id', consultaCliente )
+
+router.post('/', guardarCliente )
+router.post('/eliminarCliente/:id', eliminarCliente)
+router.post('/actualizarCliente/:id', actualizarCliente)
+
 
 export default router

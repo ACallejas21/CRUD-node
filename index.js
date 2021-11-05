@@ -14,6 +14,10 @@ app.set('view engine', 'ejs')
 //definir la ubicación de los archivos publicos
 app.use(express.static('public'))
 
+// Configuracion para procesar los formularios
+app.use(express.urlencoded({extended: true}))
+app.use(express.json())
+
 //routers
 app.use('/',router)
 
