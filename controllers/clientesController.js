@@ -12,7 +12,7 @@ export const consultaUsuario = async (req, res) => {
     // consultas preparadas
     con.query(`SELECT cliente.idCliente , cliente.nombreCliente , cliente.apellidoCliente , cliente.telefonoCliente , cliente.correoCliente , municipio.nombreMunicipio 
     FROM cliente
-    INNER JOIN municipio ON cliente.Municipio=municipio.idMunicipio`, async (err, result) => {
+    INNER JOIN municipio ON cliente.Municipio=municipio.idMunicipio ORDER BY idCliente asc`, async (err, result) => {
         res.render('clientes', {clientes: result})
     })
 
