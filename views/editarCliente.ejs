@@ -22,26 +22,26 @@
         <form action="/actualizarCliente/<%= clientes[0].idCliente %>" method="post" style="border-width: 1px; border-style: solid; border-radius: 5px; padding: 10px;">
 
             <div class="form-group">
-                <label for="nombre">nombre</label>
+                <label class="h2 for="nombre">nombre</label>
                 <input id="nombreInput" class="form-control" type="text" name="nombre" value="<%= clientes[0].nombreCliente %>">
             </div>
 
             <div class="form-group">
-                <label for="apellido">apellido</label>
+                <label class="h2 for="apellido">apellido</label>
                 <input id="apellidoInput" class="form-control" type="text" name="apellido" value="<%= clientes[0].apellidoCliente %>">
             </div>
 
             <div class="form-group">
-                <label for="telefono">Telefono</label>
+                <label class="h2 for="telefono">Telefono</label>
                 <input id="telefonoInput" class="form-control" type="text" name="telefono" value="<%= clientes[0].telefonoCliente %>" onkeypress="return valideKey(event);" maxlength="8">
             </div>
 
             <div class="form-group">
-                <label for="correo">correo</label>
+                <label class="h2 for="correo">correo</label>
                 <input id="correoInput" class="form-control" type="text" name="correo" value="<%= clientes[0].correoCliente %>">
             </div>
             <div class="form-group">
-                <label for="municipio" class="form-label">Municipio </label>
+                <label class="h2 for="municipio" class="form-label">Municipio </label>
                 <select class="form-select" aria-label="Default select example" name="municipio">
                     <% for( let municipio = 0; municipio < municipios.length; municipio++ ) { %>
                         <% if (municipios[municipio].idMunicipio == clientes[0].idMunicipio) { %>
