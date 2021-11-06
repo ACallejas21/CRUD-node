@@ -61,7 +61,7 @@ export const eliminarCliente = async (req, res) => {
 export const consultaCliente = async (req, res) => {
 
     // consultas preparadas
-    con.query(`SELECT cliente.idCliente , cliente.nombreCliente , cliente.apellidoCliente , cliente.telefonoCliente , cliente.correoCliente , municipio.nombreMunicipio 
+    con.query(`SELECT cliente.idCliente , cliente.nombreCliente , cliente.apellidoCliente , cliente.telefonoCliente , cliente.correoCliente ,municipio.idMunicipio, municipio.nombreMunicipio 
     FROM cliente
     INNER JOIN municipio ON cliente.Municipio=municipio.idMunicipio WHERE cliente.idCliente=?`,[req.params.id] , async (err, result) => {
         res.render('editarCliente', {clientes: result, municipios: datosMunicipios})

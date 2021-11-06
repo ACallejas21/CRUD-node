@@ -1,0 +1,48 @@
+<%- include('./layout/cabecera.ejs') %>
+<div class="container   ">
+    <h1 style="margin: 10px;" class="text-center" >Tabla Municipios</h1>
+</div>
+<br>
+<a href="/" class="btn btn-secondary" type="button">regresar</a>
+<a href="/agregarMunicipio" class="btn btn-primary" type="button">Agregar Municipio</a>
+<br>
+<br>
+<div class="text-center">
+    <table class="table table-light table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>id</th>
+                <th>nombre</th>
+                <th>Código</th>
+                <th>acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for( let municipio = 0; municipio < municipios.length; municipio++ ) { %>
+        
+                <tr>
+                    <td> <%= municipios[municipio].idMunicipio %></td>
+                    <td > <%= municipios[municipio].nombreMunicipio %> </td>
+                    <td> <%= municipios[municipio].codigoMunicipio %> </td>
+                    <td>
+                        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                            <form class="form-inline" method="get" action="/editarMunicipio/<%= municipios[municipio].idMunicipio %>">
+                                <button class="btn btn-warning" type="submit">Editar</button>
+                            </form>
+                        </div>
+                        ||
+                        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                            <form class="form-inline" method="post" action="/eliminarMunicipio/<%= municipios[municipio].idMunicipio %>">
+                                <button class="btn btn-danger" type="submit">Eliminar</button>
+                            </form>
+                        </div>
+                    </td>
+    
+                </tr>
+    
+            <% } %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('./layout/pie.ejs') %> 

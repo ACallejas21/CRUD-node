@@ -1,0 +1,38 @@
+<%- include('./layout/cabecera.ejs') %> 
+<div class="container   ">
+    <h1 style="margin: 10px;" class="text-center" >Agregar Nuevo Municipio</h1>
+</div>
+<a style="margin: 10px;" href="/municipios" class="btn btn-secondary" type="button">regresar</a>
+<form action="/guardarMunicipio" method="post" style="border-width: 1px; border-style: solid; border-radius: 5px; padding: 10px;">
+
+    <div class="form-group">
+        <label class="h2" for="nombre">nombre</label>
+        <input id="nombreInput" class="form-control" type="text" name="nombre" placeholder="nombre">
+    </div>
+
+    <div class="form-group">
+        <label class="h2" for="telefono">código</label>
+        <input id="codigoInput" class="form-control" type="text" name="codigo" maxlength="4" onkeypress="return valideKey(event);" placeholder="1234">
+    </div>
+
+
+    <button style="margin-top: 10px;" class="btn btn-primary" type="submit">Agregar</button>
+</form>
+
+
+<%- include('./layout/pie.ejs') %> 
+<script type="text/javascript">
+    function valideKey(evt){
+        
+        // code is the decimal ASCII representation of the pressed key.
+        var code = (evt.which) ? evt.which : evt.keyCode;
+        
+        if(code==8) { // backspace.
+          return true;
+        } else if(code>=48 && code<=57) { // is a number.
+          return true;
+        } else{ // other keys.
+          return false;
+        }
+    }
+    </script> 
